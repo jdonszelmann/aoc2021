@@ -17,7 +17,7 @@ defmodule Day01 do
   def part2(file \\ "../day1/input.txt") do
     Parse.parse_int_lines(file)
     |> Enum.chunk_every(3, 1)
-    |> Enum.map(fn x -> Enum.sum(x) end)
+    |> Enum.map(&Enum.sum/1)
     |> Enum.to_list
     |> count_increasing
   end
