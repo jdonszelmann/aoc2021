@@ -29,6 +29,7 @@ defmodule Aoc2021.Day02 do
     Parse.parse_string_lines(file)
     |> Enum.map(&split_string/1)
     |> Enum.reduce({0, 0, 0}, &reduce2/2)
+    |> Tuple.delete_at(2)
     |> Tuple.product
   end
 end
