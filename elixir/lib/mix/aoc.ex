@@ -15,19 +15,14 @@ defmodule Mix.Tasks.Aoc do
 
   @spec run_day(integer) :: :ok | :error
   def run_day(day) do
-    mod = "Elixir.Day" <> pad_zero(day)
-    try do
-      String.to_existing_atom(mod)
-    rescue
-      ArgumentError -> :error
-    else _ ->
-      mod = String.to_existing_atom(mod)
+    mod = "Elixir.Aoc2021.Day" <> pad_zero(day)
 
-      Mix.shell().info("Day #{day}:")
-      Mix.shell().info(" part 1: #{apply(mod, :part1, [])}")
-      Mix.shell().info(" part 2: #{apply(mod, :part2, [])}")
-      :ok
-    end
+    mod = String.to_existing_atom(mod)
+    Mix.shell().info("Day #{day}:")
+    Mix.shell().info(" part 1: #{apply(mod, :part1, [])}")
+    Mix.shell().info(" part 2: #{apply(mod, :part2, [])}")
+
+    :ok
   end
 
   @impl Mix.Task
@@ -35,9 +30,7 @@ defmodule Mix.Tasks.Aoc do
     if length(args) == 1 do
       case Integer.parse(hd(args)) do
         {day, _} ->
-          if run_day(day) != :ok do
-            Mix.shell().error("Invalid day: \"#{day}\"")
-          end
+          run_day(day)
 
         :error ->
           Mix.shell().error("Invalid integer: \"#{hd(args)}\"")

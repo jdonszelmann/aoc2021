@@ -1,7 +1,9 @@
 
 
-defmodule Day01 do
-  @spec part1([non_neg_integer]) :: non_neg_integer
+defmodule Aoc2021.Day01 do
+  alias Aoc2021.Parse
+
+  @spec count_increasing([non_neg_integer]) :: non_neg_integer
   defp count_increasing(ints) do
     length for {a, b} <- Stream.zip(ints, tl ints), a < b, do: 1
   end

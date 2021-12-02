@@ -1,0 +1,3 @@
+
+
+print("part 1: {}\npart 2: {}".format(*(lambda f, inp, reduce: (f(inp, reduce, 1), f(inp, reduce, 2)))(lambda inp, reduce, part: (lambda v : v[0] * v[1])(reduce(lambda acc, val: ((acc[0], acc[1] + val[1], acc[2]) if val[0] == "forward" else(acc[0] + val[1], acc[1], acc[2]) if val[0] == "down" else(acc[0] - val[1], acc[1], acc[2]))if part == 1 else ((acc[0] + (acc[2] * val[1]), acc[1] + val[1], acc[2]) if val[0] == "forward" else(acc[0], acc[1], acc[2] + val[1]) if val[0] == "down" else(acc[0], acc[1], acc[2] - val[1])),inp, (0, 0, 0))),[(lambda i: (i[0], int(i[1])))(i.split(" ")) for i in open("input.txt").readlines() if i != ""], __import__("functools").reduce)))

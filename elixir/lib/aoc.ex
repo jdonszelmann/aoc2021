@@ -1,4 +1,4 @@
-defmodule Benchmark do
+defmodule Aoc2021.Benchmark do
   def measure(function) do
     function
     |> :timer.tc()
