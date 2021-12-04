@@ -18,6 +18,7 @@ for (d, l) in formatted_lines:
     elif d == "up":
         depth -= l
 
+print(depth, pos)
 print("part 1:", depth * pos)
 
 depth = 0
@@ -33,4 +34,5 @@ for (d, l) in formatted_lines:
     elif d == "up":
         aim -= l
 
+print(depth, pos)
 print("part 2:", depth * pos)

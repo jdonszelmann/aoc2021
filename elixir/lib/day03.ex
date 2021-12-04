@@ -25,7 +25,7 @@ defmodule Aoc2021.Day03 do
   def for_all_bits(lst, which) do
     Enum.reduce(0..((String.length (hd lst)) - 1), "", fn x, acc -> acc <> Integer.to_string(common(lst, x, which)) end)
     |> Integer.parse(2)
-    |> elem 0
+    |> elem(0)
   end
 
   def ox_or_fuel(lst, which, index \\ 0) do
@@ -33,7 +33,7 @@ defmodule Aoc2021.Day03 do
       hd(lst)
       |> to_string
       |> Integer.parse(2)
-      |> elem 0
+      |> elem(0)
     else
       c = common(lst, index, which)
 
