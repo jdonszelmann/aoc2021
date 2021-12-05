@@ -3,7 +3,7 @@ from functools import reduce
 from itertools import groupby
 
 coords = []
-with open("test.txt") as f:
+with open("input.txt") as f:
     for i in f.readlines():
         l, r = i.split("->")
 
@@ -21,7 +21,6 @@ def calculate(lst, f=lambda *args: True):
     res = defaultdict(int)
     for (x1, y1, x2, y2) in lst:
         if f(x1, y1, x2, y2):
-            print((x1, y1, x2, y2))
             dx = sign(x2 - x1)
             dy = sign(y2 - y1)
 
@@ -29,7 +28,6 @@ def calculate(lst, f=lambda *args: True):
                 res[x] += 1
 
 
-    print(res)
     c = 0
     for i in res.values():
         if i > 1:
