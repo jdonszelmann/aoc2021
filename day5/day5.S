@@ -8,7 +8,7 @@
 
     line_buf: .zero GRID_SIZE
 
-    format: .asciz "part 2: %d\n"
+    format: .asciz "part %d: %d\n"
     
     numbers: 
         .long 0
@@ -83,7 +83,8 @@ do_part:
         jne 2b
 
     mov $format, %rdi
-    mov %rax, %rsi
+    mov part, %rsi
+    mov %rax, %rdx
     mov $0, %rax
     call printf
 
