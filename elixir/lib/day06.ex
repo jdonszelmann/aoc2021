@@ -14,8 +14,7 @@ defmodule Aoc2021.Day06 do
     Enum.map(0..8, &Map.get(a, &1, 0))
   end
 
-  def iterate(l) do
-    [a, b, c, d, e, f, g, h, i] = l
+  def iterate([a, b, c, d, e, f, g, h, i]) do
     [b, c, d, e, f, g, h + a, i, a]
   end
 
