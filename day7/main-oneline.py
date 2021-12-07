@@ -1,0 +1,1 @@
+print("part 1: {}\npart 2: {}".format(*(lambda i, f: (f(i, lambda i: i), f(i, lambda i: (i * (i + 1)) // 2)))([int(i) for i in open("input.txt").readline().split(",")], lambda inp, f: min({p: sum(f(abs(i - p)) for i in inp) for p in range(0, max(inp) * 2)}.items(), key=lambda i: i[1])[1])))

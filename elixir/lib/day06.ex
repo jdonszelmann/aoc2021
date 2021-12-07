@@ -2,13 +2,6 @@
 defmodule Aoc2021.Day06 do
   alias Aoc2021.Parse
 
-  def split_to_integers(line) do
-    line
-    |> String.split(",")
-    |> Enum.map(&String.to_integer/1)
-    |> Enum.to_list()
-  end
-
   def collect(l) do
     a = Enum.frequencies(l)
     Enum.map(0..8, &Map.get(a, &1, 0))
@@ -22,7 +15,7 @@ defmodule Aoc2021.Day06 do
     file
     |> Parse.parse_string_lines()
     |> hd
-    |> split_to_integers
+    |> Parse.split_to_integers()
     |> collect
     |> (&Enum.reduce(1..n, &1, fn _, acc -> iterate(acc) end)).()
     |> Enum.sum
