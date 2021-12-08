@@ -305,7 +305,7 @@ itoa:
     addi s2, s2, 1
 
     beqz s1, 2f
-    j 1b  
+    j 1b
 
 2:
 
@@ -407,9 +407,7 @@ print_string:
 
 
 print_char:
-    # print A
     li t0, 0x10010000
-    li t1, 65
     sw a0, 0(t0)
     
     ret

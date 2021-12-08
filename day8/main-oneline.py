@@ -1,0 +1,7 @@
+
+
+
+print("part 1: {}\npart 2: {}".format(*(lambda inps, outs: (sum([1 for i in outs for num in i if len(num) in [2, 3, 4, 7]]),sum(int("".join(str(i) for i in (lambda patterns: [k for i in o for k, v in patterns.items() if all(x in i for x in v) and len(v) == len(i)])((lambda patterns: {k: num for num in i for k in range(10) if num not in patterns.values() and (((len(num) == 5 and k == 3) or(len(num) != 5 and all(x in num for x in patterns[4]) and k == 9) or(len(num) != 5 and not all(x in num for x in patterns[4]) and k == 0))if all(x in num for x in patterns[1]) else((all(x in num for x in patterns[4] if x not in patterns[1]) and len(num) == 5 and k == 5) or((not (all(x in num for x in patterns[4] if x not in patterns[1]) and len(num) == 5)) and all(x in num for x in patterns[4]) and k == 5) or((not (all(x in num for x in patterns[4] if x not in patterns[1]) and len(num) == 5)) and not all(x in num for x in patterns[4]) and len(num) == 5 and k == 2) or ((not (all(x in num for x in patterns[4] if x not in patterns[1]) and len(num) == 5)) and not all(x in num for x in patterns[4]) and len(num) != 5 and k == 6)))} | patterns)({(1 if len(k) == 2 else 7 if len(k) == 3 else 4 if len(k) == 4 else 8): k for k in i if len(k) in [2, 3, 4, 7]})))) for i, o in zip(inps, outs))))(*(lambda inp: ([i.strip().split(" ") for (i, _) in inp], [o.strip().split(" ") for (_, o) in inp]))([i.split("|") for i in open("input.txt") .readlines()]))))
+
+
+
