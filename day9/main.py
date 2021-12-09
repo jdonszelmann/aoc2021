@@ -25,10 +25,11 @@ for y in range(len(inp)):
             id_ctr += 1
             risk += 1 + cur
 
-numbers = sum(len(i) for i in inp)
-nines = sum(i.count("9") for i in inp)
+print("part 1:", risk)
 
-for i in range(8):
+last = 0
+while len(basins) != last:
+    last = len(basins)
     for y in range(len(inp)):
         for x in range(width):
             cur = int(inp[y][x])
@@ -56,4 +57,4 @@ size = 1
 for i in groups[-3:]:
     size *= len(i)
 
-print(size)
+print("part 2:", size)
