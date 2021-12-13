@@ -1,4 +1,4 @@
-with open("extra.txt") as f:
+with open("input.txt") as f:
     c, f = [i.strip().split("\n") for i in f.read().split("\n\n")]
 
 coords = []
@@ -36,7 +36,7 @@ def fold(axis, offset, coords):
 
 res = fold(*folds[0], coords)
 
-print("part 1:", len(res))
+print("part 1:", len(set(res)))
 
 curr = coords
 for i in folds:

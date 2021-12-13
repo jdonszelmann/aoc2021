@@ -1,6 +1,6 @@
 
 print("part 1: {}\npart 2:\n{}".format(*(lambda c, z, p, f, r: (lambda coords, folds: (
-    len(f(*folds[0], coords)), p(r(lambda a, v: f(*v, a), folds, coords))
+    len(set(f(*folds[0], coords))), p(r(lambda a, v: f(*v, a), folds, coords))
 ))(
     [tuple(map(int, i.split(","))) for i in c],
     [(lambda a, b: (["x", "y"].index(a), int(b)))(*i.replace("fold along", "").strip().split("=")) for i in z]
