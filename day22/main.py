@@ -25,10 +25,9 @@ def intersection(a, b):
         if n[0] > m[1] or n[1] < m[0]:
             return None
 
-    u = (max(a[0][0], b[0][0]), min(a[0][1], b[0][1])), \
+    return (max(a[0][0], b[0][0]), min(a[0][1], b[0][1])), \
         (max(a[1][0], b[1][0]), min(a[1][1], b[1][1])), \
         (max(a[2][0], b[2][0]), min(a[2][1], b[2][1]))
-
 
 def difference(cube1, cube2):
     int = intersection(cube1, cube2)
