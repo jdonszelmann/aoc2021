@@ -1,0 +1,1 @@
+('operator', 6, [('operator', 0, [('literal', 0, '1010', 11), ('literal', 6, '1011', 11)], 44), ('operator', 4, [('literal', 7, '1100', 11), ('operator', 0, '1101', 11)], 40)], 106)
